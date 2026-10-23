@@ -25,6 +25,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 180
     steps:
+      - name: Free runner disk space
+        run: |
+          df -h / | tail -1
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL /usr/local/share/boost
+          sudo docker image prune --all --force >/dev/null 2>&1 || true
+          df -h / | tail -1
+          free -m | head -2
       - name: Initialize environment
         uses: angular/dev-infra/github-actions/npm/checkout-and-setup-node@05f294094d7b9377f3b545673098aefb904962f3 # main
       - name: Setup Bazel
@@ -32,7 +39,15 @@ jobs:
       - name: Install node modules
         run: pnpm install --frozen-lockfile
       - name: Build adev (production)
-        run: pnpm bazel build //adev:build.production
+        # Standard GitHub runners (4 vCPU / 16 GB) OOM with Bazel's defaults, so cap the JVM,
+        # the number of parallel actions and the RAM Bazel believes it may use.
+        run: |
+          pnpm bazel --host_jvm_args=-Xmx2g build //adev:build.production \
+            --jobs=2 \
+            --local_resources=memory=8192 \
+            --local_resources=cpu=3 \
+            --show_progress_rate_limit=30
+          df -h / | tail -1
       - name: Prepare site for GitHub Pages
         env:
           # Set repository variable ADEV_BASE_HREF to "/" once a custom domain (e.g. angular.uz) is attached.
