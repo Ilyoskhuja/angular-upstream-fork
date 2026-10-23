@@ -1,19 +1,19 @@
-<docs-decorative-header title="Dependency Injection" imgSrc="adev/src/assets/images/dependency_injection.svg"> <!-- markdownlint-disable-line -->
-Reuse code and control behaviors across your application and tests.
+<docs-decorative-header title="Bogʻliqliklarni inyeksiya qilish" imgSrc="adev/src/assets/images/dependency_injection.svg"> <!-- markdownlint-disable-line -->
+Kodni qayta ishlating va ilovangiz hamda testlaringiz boʻylab xatti-harakatlarni boshqaring.
 </docs-decorative-header>
 
-When you need to share logic between components, Angular leverages the design pattern of [dependency injection](guide/di) that allows you to create a “service” which allows you to inject code into components while managing it from a single source of truth.
+Komponentlar oʻrtasida mantiqni ulashish kerak boʻlganda, Angular [bogʻliqliklarni inyeksiya qilish (dependency injection)](guide/di) dizayn namunasidan foydalanadi. U sizga "servis" yaratish imkonini beradi — servis kodni komponentlarga inyeksiya qilish va uni yagona haqiqat manbasidan boshqarish imkonini beradi.
 
-## What are services?
+## Servislar nima?
 
-Services are reusable pieces of code that can be injected.
+Servislar — inyeksiya qilinishi mumkin boʻlgan qayta ishlatiladigan kod boʻlaklari.
 
-Similar to defining a component, services are comprised of the following:
+Komponentni aniqlashga oʻxshab, servislar quyidagilardan iborat:
 
-- A **TypeScript decorator** that declares the class as an Angular service via `@Service` and allows you to define a service that can be accessed anywhere in your application.
-- A **TypeScript class** that defines the desired code that will be accessible when the service is injected
+- Klassni `@Service` orqali Angular servisi sifatida eʼlon qiluvchi va ilovangizning istalgan joyidan foydalanish mumkin boʻlgan servisni aniqlash imkonini beruvchi **TypeScript dekoratori**.
+- Servis inyeksiya qilinganda foydalanish mumkin boʻlgan kerakli kodni aniqlovchi **TypeScript klassi**
 
-Here is an example of a `Calculator` service.
+Quyida `Calculator` servisiga misol keltirilgan.
 
 ```angular-ts
 import {Service} from '@angular/core';
@@ -26,14 +26,14 @@ export class Calculator {
 }
 ```
 
-## How to use a service
+## Servisdan qanday foydalanish
 
-When you want to use a service in a component, you need to:
+Komponentda servisdan foydalanmoqchi boʻlsangiz, quyidagilarni bajarishingiz kerak:
 
-1. Import the service
-2. Declare a class field where the service is injected. Assign the class field to the result of the call of the built-in function [`inject`](/api/core/inject) which creates the service
+1. Servisni import qiling
+2. Servis inyeksiya qilinadigan klass maydonini eʼlon qiling. Klass maydoniga servisni yaratuvchi oʻrnatilgan [`inject`](/api/core/inject) funksiyasini chaqirish natijasini tayinlang
 
-Here’s what it might look like in the `Receipt` component:
+`Receipt` komponentida bu quyidagicha koʻrinishi mumkin:
 
 ```angular-ts
 import {Component, inject} from '@angular/core';
@@ -49,11 +49,11 @@ export class Receipt {
 }
 ```
 
-In this example, the `Calculator` is being used by calling the Angular function [`inject`](/api/core/inject) and passing in the service to it.
+Bu misolda `Calculator` Angular'ning [`inject`](/api/core/inject) funksiyasini chaqirish va unga servisni uzatish orqali ishlatilmoqda.
 
-## Next Step
+## Keyingi qadam
 
 <docs-pill-row>
-  <docs-pill title="Next Steps After Essentials" href="essentials/next-steps" />
-  <docs-pill title="In-depth dependency injection guide" href="guide/di" />
+  <docs-pill title="Asoslardan keyingi qadamlar" href="essentials/next-steps" />
+  <docs-pill title="Bogʻliqliklarni inyeksiya qilish boʻyicha chuqur qoʻllanma" href="guide/di" />
 </docs-pill-row>

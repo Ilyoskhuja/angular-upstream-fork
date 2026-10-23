@@ -1,14 +1,14 @@
-<docs-decorative-header title="Templates" imgSrc="adev/src/assets/images/templates.svg"> <!-- markdownlint-disable-line -->
-Use Angular's template syntax to create dynamic user interfaces.
+<docs-decorative-header title="Shablonlar" imgSrc="adev/src/assets/images/templates.svg"> <!-- markdownlint-disable-line -->
+Dinamik foydalanuvchi interfeyslarini yaratish uchun Angular shablon sintaksisidan foydalaning.
 </docs-decorative-header>
 
-Component templates aren't just static HTML— they can use data from your component class and set up handlers for user interaction.
+Komponent shablonlari shunchaki statik HTML emas — ular komponent klassingizdagi maʼlumotlardan foydalanishi va foydalanuvchi bilan oʻzaro aloqa uchun ishlov beruvchilarni (handlers) sozlashi mumkin.
 
-## Showing dynamic text
+## Dinamik matnni koʻrsatish
 
-In Angular, a _binding_ creates a dynamic connection between a component's template and its data. This connection ensures that changes to the component's data automatically update the rendered template.
+Angular'da _bogʻlash_ (binding) komponent shabloni va uning maʼlumotlari oʻrtasida dinamik aloqa yaratadi. Bu aloqa komponent maʼlumotlaridagi oʻzgarishlar render qilingan shablonni avtomatik yangilashini taʼminlaydi.
 
-You can create a binding to show some dynamic text in a template by using double curly-braces:
+Shablonda dinamik matnni koʻrsatish uchun ikkita jingalak qavs yordamida bogʻlash yaratishingiz mumkin:
 
 ```angular-ts
 @Component({
@@ -20,28 +20,27 @@ export class UserProfile {
 }
 ```
 
-When Angular renders the component, you see:
+Angular komponentni render qilganda siz quyidagini koʻrasiz:
 
 ```html
 <h1>Profile for pro_programmer_123</h1>
 ```
 
-Angular automatically keeps the binding up-to-date when the value of the signal changes. Building on
-the example above, if we update the value of the `userName` signal:
+Signal qiymati oʻzgarganda Angular bogʻlashni avtomatik ravishda yangilab turadi. Yuqoridagi misolni davom ettirib, `userName` signalining qiymatini yangilasak:
 
 ```typescript
 this.userName.set('cool_coder_789');
 ```
 
-The rendered page updates to reflect the new value:
+Render qilingan sahifa yangi qiymatni aks ettirish uchun yangilanadi:
 
 ```html
 <h1>Profile for cool_coder_789</h1>
 ```
 
-## Setting dynamic properties and attributes
+## Dinamik xususiyatlar va atributlarni oʻrnatish
 
-Angular supports binding dynamic values into DOM properties with square brackets:
+Angular kvadrat qavslar yordamida dinamik qiymatlarni DOM xususiyatlariga (properties) bogʻlashni qoʻllab-quvvatlaydi:
 
 ```angular-ts
 @Component({
@@ -54,18 +53,18 @@ export class UserProfile {
 }
 ```
 
-You can also bind to HTML _attributes_ by prefixing the attribute name with `attr.`:
+Atribut nomi oldiga `attr.` prefiksini qoʻyib, HTML _atributlariga_ ham bogʻlashingiz mumkin:
 
 ```angular-html
 <!-- Bind the `role` attribute on the `<ul>` element to value of `listRole`. -->
 <ul [attr.role]="listRole()"></ul>
 ```
 
-Angular automatically updates DOM properties and attributes when the bound value changes.
+Bogʻlangan qiymat oʻzgarganda Angular DOM xususiyatlari va atributlarini avtomatik yangilaydi.
 
-## Handling user interaction
+## Foydalanuvchi harakatlariga ishlov berish
 
-Angular lets you add event listeners to an element in your template with parentheses:
+Angular shablondagi elementga oddiy qavslar yordamida hodisa tinglovchilarini (event listeners) qoʻshish imkonini beradi:
 
 ```angular-ts
 @Component({
@@ -82,7 +81,7 @@ export class UserProfile {
 }
 ```
 
-If you need to pass the [event](https://developer.mozilla.org/docs/Web/API/Event) object to your listener, you can use Angular's built-in `$event` variable inside the function call:
+Agar tinglovchingizga [hodisa](https://developer.mozilla.org/docs/Web/API/Event) obyektini uzatish kerak boʻlsa, funksiya chaqiruvi ichida Angular'ning oʻrnatilgan `$event` oʻzgaruvchisidan foydalanishingiz mumkin:
 
 ```angular-ts
 @Component({
@@ -99,9 +98,9 @@ export class UserProfile {
 }
 ```
 
-## Control flow with `@if` and `@for`
+## `@if` va `@for` bilan boshqaruv oqimi
 
-You can conditionally hide and show parts of a template with Angular's `@if` block:
+Angular'ning `@if` bloki yordamida shablon qismlarini shartli ravishda yashirishingiz va koʻrsatishingiz mumkin:
 
 ```angular-html
 <h1>User profile</h1>
@@ -112,7 +111,7 @@ You can conditionally hide and show parts of a template with Angular's `@if` blo
 }
 ```
 
-The `@if` block also supports an optional `@else` block:
+`@if` bloki ixtiyoriy `@else` blokini ham qoʻllab-quvvatlaydi:
 
 ```angular-html
 <h1>User profile</h1>
@@ -126,7 +125,7 @@ The `@if` block also supports an optional `@else` block:
 }
 ```
 
-You can repeat part of a template multiple times with Angular's `@for` block:
+Angular'ning `@for` bloki yordamida shablonning bir qismini bir necha marta takrorlashingiz mumkin:
 
 ```angular-html
 <h1>User profile</h1>
@@ -138,15 +137,15 @@ You can repeat part of a template multiple times with Angular's `@for` block:
 </ul>
 ```
 
-Angular uses the `track` keyword, shown in the example above, to associate data with the DOM elements created by `@for`. See [_Why is track in @for blocks important?_](guide/templates/control-flow#why-is-track-in-for-blocks-important) for more info.
+Angular yuqoridagi misolda koʻrsatilgan `track` kalit soʻzidan maʼlumotlarni `@for` tomonidan yaratilgan DOM elementlari bilan bogʻlash uchun foydalanadi. Qoʻshimcha maʼlumot uchun [_Nima uchun @for bloklarida track muhim?_](guide/templates/control-flow#why-is-track-in-for-blocks-important) boʻlimiga qarang.
 
-TIP: Want to know more about Angular templates? See the [In-depth Templates guide](guide/templates) for the full details.
+TIP: Angular shablonlari haqida koʻproq bilmoqchimisiz? Toʻliq maʼlumot uchun [Shablonlar boʻyicha chuqur qoʻllanmaga](guide/templates) qarang.
 
-## Next Step
+## Keyingi qadam
 
-Now that you have dynamic data and templates in the application, it's time to learn how to enhance templates by conditionally hiding or showing certain elements, looping over elements, and more.
+Ilovada dinamik maʼlumotlar va shablonlar bor, endi maʼlum elementlarni shartli yashirish yoki koʻrsatish, elementlar boʻylab takrorlash va boshqa usullar bilan shablonlarni yaxshilashni oʻrganish vaqti keldi.
 
 <docs-pill-row>
-  <docs-pill title="Forms with Signals" href="essentials/signal-forms" />
-  <docs-pill title="In-depth template guide" href="guide/templates" />
+  <docs-pill title="Signallar bilan formalar" href="essentials/signal-forms" />
+  <docs-pill title="Shablonlar boʻyicha chuqur qoʻllanma" href="guide/templates" />
 </docs-pill-row>

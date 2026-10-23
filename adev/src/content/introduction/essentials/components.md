@@ -1,19 +1,19 @@
-<docs-decorative-header title="Components" imgSrc="adev/src/assets/images/components.svg"> <!-- markdownlint-disable-line -->
-The fundamental building block for creating applications in Angular.
+<docs-decorative-header title="Komponentlar" imgSrc="adev/src/assets/images/components.svg"> <!-- markdownlint-disable-line -->
+Angular'da ilovalar yaratishning asosiy qurilish bloki.
 </docs-decorative-header>
 
-Components are the main building blocks of Angular applications. Each component represents a part of a larger web page. Organizing an application into components helps provide structure to your project, clearly separating code into specific parts that are easy to maintain and grow over time.
+Komponentlar — Angular ilovalarining asosiy qurilish bloklari. Har bir komponent kattaroq veb-sahifaning bir qismini ifodalaydi. Ilovani komponentlarga ajratish loyihangizga tuzilma beradi va kodni vaqt oʻtishi bilan saqlash va kengaytirish oson boʻlgan aniq qismlarga ajratadi.
 
-## Defining a component
+## Komponentni aniqlash
 
-Every component has a few main parts:
+Har bir komponent bir nechta asosiy qismlardan iborat:
 
-1. A `@Component` [decorator](https://www.typescriptlang.org/docs/handbook/decorators.html) that contains some configuration used by Angular.
-2. An HTML template that controls what renders into the DOM.
-3. A [CSS selector](https://developer.mozilla.org/docs/Learn/CSS/Building_blocks/Selectors) that defines how the component is used in HTML.
-4. A TypeScript class with behaviors, such as handling user input or making requests to a server.
+1. Angular foydalanadigan baʼzi konfiguratsiyalarni oʻz ichiga olgan `@Component` [dekoratori](https://www.typescriptlang.org/docs/handbook/decorators.html).
+2. DOM'ga nima render qilinishini boshqaradigan HTML shablon.
+3. Komponent HTML'da qanday ishlatilishini belgilaydigan [CSS selektor](https://developer.mozilla.org/docs/Learn/CSS/Building_blocks/Selectors).
+4. Foydalanuvchi kiritmalarini qayta ishlash yoki serverga soʻrov yuborish kabi xatti-harakatlarga ega TypeScript klassi.
 
-Here is a simplified example of a `UserProfile` component.
+Quyida `UserProfile` komponentining soddalashtirilgan misoli keltirilgan.
 
 ```angular-ts {header: "user-profile.ts"}
 @Component({
@@ -28,7 +28,7 @@ export class UserProfile {
 }
 ```
 
-The `@Component` decorator also optionally accepts a `styles` property for any CSS you want to apply to your template:
+`@Component` dekoratori shuningdek shablonga qoʻllamoqchi boʻlgan har qanday CSS uchun ixtiyoriy `styles` xususiyatini ham qabul qiladi:
 
 ```angular-ts {header: "user-profile.ts"}
 @Component({
@@ -48,9 +48,9 @@ export class UserProfile {
 }
 ```
 
-### Separating HTML and CSS into separate files
+### HTML va CSS'ni alohida fayllarga ajratish
 
-You can define a component's HTML and CSS in separate files using `templateUrl` and `styleUrl`:
+`templateUrl` va `styleUrl` yordamida komponentning HTML va CSS'ini alohida fayllarda aniqlashingiz mumkin:
 
 ```angular-ts {header: "user-profile.ts"}
 @Component({
@@ -74,9 +74,9 @@ h1 {
 }
 ```
 
-## Using components
+## Komponentlardan foydalanish
 
-You build an application by composing multiple components together. For example, if you are building a user profile page, you might break the page up into several components like this:
+Ilovani bir nechta komponentlarni birlashtirish orqali qurasiz. Masalan, foydalanuvchi profili sahifasini yaratayotgan boʻlsangiz, sahifani quyidagicha bir nechta komponentlarga boʻlishingiz mumkin:
 
 ```mermaid
 flowchart TD
@@ -87,15 +87,15 @@ flowchart TD
     D[UserAddress]
 ```
 
-Here, the `UserProfile` component uses several other components to produce the final page.
+Bu yerda `UserProfile` komponenti yakuniy sahifani hosil qilish uchun bir nechta boshqa komponentlardan foydalanadi.
 
-To import and use a component, you need to:
+Komponentni import qilish va ishlatish uchun:
 
-1. In your component's TypeScript file, add an `import` statement for the component you want to use.
-2. In your `@Component` decorator, add an entry to the `imports` array for the component you want to use.
-3. In your component's template, add an element that matches the selector of the component you want to use.
+1. Komponentingizning TypeScript faylida ishlatmoqchi boʻlgan komponent uchun `import` ifodasini qoʻshing.
+2. `@Component` dekoratoringizda ishlatmoqchi boʻlgan komponentni `imports` massiviga qoʻshing.
+3. Komponentingiz shablonida ishlatmoqchi boʻlgan komponent selektoriga mos keladigan element qoʻshing.
 
-Here's an example of a `UserProfile` component importing a `ProfilePhoto` component:
+Quyida `ProfilePhoto` komponentini import qilayotgan `UserProfile` komponentiga misol:
 
 ```angular-ts {header: "user-profile.ts"}
 import {ProfilePhoto} from './profile-photo';
@@ -114,13 +114,13 @@ export class UserProfile {
 }
 ```
 
-TIP: Want to know more about Angular components? See the [In-depth Components guide](guide/components) for the full details.
+TIP: Angular komponentlari haqida koʻproq bilmoqchimisiz? Toʻliq maʼlumot uchun [Komponentlar boʻyicha chuqur qoʻllanmaga](guide/components) qarang.
 
-## Next Step
+## Keyingi qadam
 
-Now that you know how components work in Angular, it's time to learn how we add and manage dynamic data in our application.
+Angular'da komponentlar qanday ishlashini bilib oldingiz, endi ilovamizga dinamik maʼlumotlarni qanday qoʻshish va boshqarishni oʻrganish vaqti keldi.
 
 <docs-pill-row>
-  <docs-pill title="Reactivity with signals" href="essentials/signals" />
-  <docs-pill title="In-depth components guide" href="guide/components" />
+  <docs-pill title="Signallar bilan reaktivlik" href="essentials/signals" />
+  <docs-pill title="Komponentlar boʻyicha chuqur qoʻllanma" href="guide/components" />
 </docs-pill-row>

@@ -31,7 +31,7 @@ Maqsad — angular.dev saytidagi "Community translations" roʻyxatiga qoʻshilad
 | Kirish → Angular nima? | ✅ tarjima qilingan |
 | Kirish → Oʻrnatish | ✅ tarjima qilingan |
 | Kirish → Asoslar → Umumiy koʻrinish | ✅ tarjima qilingan |
-| Asoslar (komponentlar, signallar, shablonlar, DI) | ⏳ navbatda |
+| Asoslar (komponentlar, signallar, shablonlar, signal formalar, DI, keyingi qadamlar) | ✅ tarjima qilingan |
 | Chuqur qoʻllanmalar (`guide/`) | ⏳ navbatda |
 | Darsliklar (`tutorials/`) | ⏳ navbatda |
 
