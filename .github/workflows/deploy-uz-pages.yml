@@ -31,7 +31,16 @@ jobs:
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL /usr/local/share/boost
           sudo docker image prune --all --force >/dev/null 2>&1 || true
           df -h / | tail -1
-          free -m | head -2
+      - name: Add swap space
+        # The final `ng build` of adev (chunk optimization + static prerender) needs more than the
+        # 16 GB a standard runner has; without swap the runner kills the job near the end.
+        run: |
+          sudo swapoff -a || true
+          sudo fallocate -l 24G /swapfile
+          sudo chmod 600 /swapfile
+          sudo mkswap /swapfile >/dev/null
+          sudo swapon /swapfile
+          free -m | head -3
       - name: Initialize environment
         uses: angular/dev-infra/github-actions/npm/checkout-and-setup-node@05f294094d7b9377f3b545673098aefb904962f3 # main
       - name: Setup Bazel
