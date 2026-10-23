@@ -49,6 +49,7 @@ Tarjima qoidalari:
 - Kod bloklari, `<docs-*>` teglari, `href`, `imgSrc` va boshqa atributlar oʻzgartirilmaydi — faqat koʻrinadigan matn tarjima qilinadi.
 - Umumiy qabul qilingan texnik atamalar (component, signal, template, dependency injection) birinchi marta uchraganda oʻzbekcha izoh bilan, keyin inglizcha holda qoldiriladi.
 - Sahifa sarlavhalari uchun `adev/src/app/routing/navigation-entries/index.ts` dagi `label` qiymatlarini ham yangilang.
+- Har bir tarjima qilingan sarlavhaga inglizcha asl id'ni qoʻshing, aks holda saytdagi ichki havolalar buziladi va build muvaffaqiyatsiz boʻladi: `## Dinamik matnni koʻrsatish {#showing-dynamic-text}`.
 
 ## Upstream bilan sinxronlash
 
