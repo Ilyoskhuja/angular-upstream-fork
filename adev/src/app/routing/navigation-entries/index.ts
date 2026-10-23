@@ -28,23 +28,23 @@ import API_MANIFEST_JSON from '../../../assets/manifest.json' with {type: 'json'
 
 export const DOCS_SUB_NAVIGATION_DATA: NavigationItem[] = [
   {
-    label: 'Introduction',
+    label: 'Kirish',
     children: [
       {
-        label: 'What is Angular?',
+        label: 'Angular nima?',
         path: 'overview',
         contentPath: 'introduction/what-is-angular',
       },
       {
-        label: 'Installation',
+        label: 'Oʻrnatish',
         path: 'installation',
         contentPath: 'introduction/installation',
       },
       {
-        label: 'Essentials',
+        label: 'Asoslar',
         children: [
           {
-            label: 'Overview',
+            label: 'Umumiy koʻrinish',
             path: 'essentials',
             contentPath: 'introduction/essentials/overview',
           },

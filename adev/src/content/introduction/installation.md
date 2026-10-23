@@ -1,34 +1,34 @@
-<docs-decorative-header title="Installation" imgSrc="adev/src/assets/images/what_is_angular.svg"> <!-- markdownlint-disable-line -->
+<docs-decorative-header title="Oʻrnatish" imgSrc="adev/src/assets/images/what_is_angular.svg"> <!-- markdownlint-disable-line -->
 </docs-decorative-header>
 
-Get started with Angular quickly with online starters or locally with your terminal.
+Angular bilan onlayn starterlar orqali yoki terminalingizda lokal tarzda tezda boshlang.
 
-## Play Online
+## Onlayn sinab koʻring
 
-If you just want to play around with Angular in your browser without setting up a project, you can use our online sandbox:
+Agar loyiha sozlamasdan turib Angular'ni brauzeringizda shunchaki sinab koʻrmoqchi boʻlsangiz, onlayn sandbox'imizdan foydalanishingiz mumkin:
 
-<docs-card title="Playground" href="/playground" link="Open on Playground" iconImgSrc="adev/src/assets/icons/playground.svg" titleInline>
-The fastest way to play with an Angular app. No setup required.
+<docs-card title="Playground" href="/playground" link="Playground'da ochish" iconImgSrc="adev/src/assets/icons/playground.svg" titleInline>
+Angular ilovasi bilan oʻynashning eng tez usuli. Hech qanday sozlash talab qilinmaydi.
 </docs-card>
 
-## Set up a new project locally
+## Yangi loyihani lokal tarzda sozlash
 
-If you're starting a new project, you'll most likely want to create a local project so that you can use tooling such as Git.
+Agar yangi loyiha boshlayotgan boʻlsangiz, Git kabi vositalardan foydalana olish uchun lokal loyiha yaratishni xohlasangiz kerak.
 
-### Prerequisites
+### Talablar
 
-- **Node.js** - [v22.22.3 or newer](/reference/versions)
-- **Text editor** - We recommend [Visual Studio Code](https://code.visualstudio.com/)
-- **Terminal** - Required for running [Angular CLI](/tools/cli) commands
-- **Development Tool** - To improve your development workflow, we recommend the [Angular Language Service](/tools/language-service)
+- **Node.js** - [v22.22.3 yoki undan yangi](/reference/versions)
+- **Matn muharriri** - Biz [Visual Studio Code](https://code.visualstudio.com/)'ni tavsiya qilamiz
+- **Terminal** - [Angular CLI](/tools/cli) buyruqlarini bajarish uchun zarur
+- **Ishlab chiqish vositasi** - Ish jarayoningizni yaxshilash uchun [Angular Language Service](/tools/language-service)'ni tavsiya qilamiz
 
-### Instructions
+### Koʻrsatmalar
 
-The following guide will walk you through setting up a local Angular project.
+Quyidagi qoʻllanma lokal Angular loyihasini sozlash boʻyicha sizga yoʻl koʻrsatadi.
 
-#### Install Angular CLI
+#### Angular CLI'ni oʻrnating
 
-Open a terminal (if you're using [Visual Studio Code](https://code.visualstudio.com/), you can open an [integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal)) and run the following command:
+Terminalni oching (agar [Visual Studio Code](https://code.visualstudio.com/)'dan foydalanayotgan boʻlsangiz, [oʻrnatilgan terminalni](https://code.visualstudio.com/docs/editor/integrated-terminal) ochishingiz mumkin) va quyidagi buyruqni bajaring:
 
 <docs-code-multifile>
   <docs-code
@@ -57,44 +57,44 @@ Open a terminal (if you're using [Visual Studio Code](https://code.visualstudio.
     </docs-code>
 </docs-code-multifile>
 
-If you are having issues running this command in Windows or Unix, check out the [CLI docs](/tools/cli/setup-local#install-the-angular-cli) for more info.
+Agar bu buyruqni Windows yoki Unix'da bajarishda muammolarga duch kelsangiz, qoʻshimcha maʼlumot uchun [CLI hujjatlariga](/tools/cli/setup-local#install-the-angular-cli) qarang.
 
-#### Create a new project
+#### Yangi loyiha yarating
 
-In your terminal, run the CLI command [`ng new`](cli/new) with the desired project name. In the following examples, we'll be using the example project name of `my-first-angular-app`.
+Terminalingizda [`ng new`](cli/new) CLI buyrugʻini kerakli loyiha nomi bilan bajaring. Quyidagi misollarda biz `my-first-angular-app` nomli namunaviy loyihadan foydalanamiz.
 
 ```shell
 ng new <project-name>
 ```
 
-You will be presented with some configuration options for your project. Use the arrow and enter keys to navigate and select which options you desire.
+Sizga loyihangiz uchun bir nechta konfiguratsiya variantlari taklif qilinadi. Kerakli variantlarni tanlash uchun strelka va enter tugmalaridan foydalaning.
 
-If you don't have any preferences, just hit the enter key to take the default options and continue with the setup.
+Agar maxsus talablaringiz boʻlmasa, sukut boʻyicha variantlarni qabul qilish va sozlashni davom ettirish uchun shunchaki enter tugmasini bosing.
 
-After you select the configuration options and the CLI runs through the setup, you should see the following message:
+Konfiguratsiya variantlarini tanlaganingizdan va CLI sozlashni yakunlaganidan soʻng quyidagi xabarni koʻrishingiz kerak:
 
 ```text
 ✔ Packages installed successfully.
     Successfully initialized git.
 ```
 
-At this point, you're now ready to run your project locally!
+Endi loyihangizni lokal tarzda ishga tushirishga tayyorsiz!
 
-#### Running your new project locally
+#### Yangi loyihangizni lokal tarzda ishga tushirish
 
-In your terminal, switch to your new Angular project.
+Terminalingizda yangi Angular loyihangiz papkasiga oʻting.
 
 ```shell
 cd my-first-angular-app
 ```
 
-All of your dependencies should be installed at this point (which you can verify by checking for the existence of a `node_modules` folder in your project), so you can start your project by running the command:
+Bu bosqichda barcha bogʻliqliklaringiz oʻrnatilgan boʻlishi kerak (buni loyihangizda `node_modules` papkasi mavjudligini tekshirish orqali bilib olishingiz mumkin), shuning uchun loyihangizni quyidagi buyruq bilan ishga tushirishingiz mumkin:
 
 ```shell
 npm start
 ```
 
-If everything is successful, you should see a similar confirmation message in your terminal:
+Agar hammasi muvaffaqiyatli boʻlsa, terminalingizda shunga oʻxshash tasdiq xabarini koʻrishingiz kerak:
 
 ```text
 Watch mode enabled. Watching for file changes...
@@ -103,12 +103,12 @@ NOTE: Raw file sizes do not reflect development server per-request transformatio
   ➜  press h + enter to show help
 ```
 
-And now you can visit the path in `Local` (e.g., `http://localhost:4200`) to see your application. Happy coding! 🎉
+Endi ilovangizni koʻrish uchun `Local` qatoridagi manzilga (masalan, `http://localhost:4200`) kirishingiz mumkin. Omadli kodlash! 🎉
 
-### Using AI for Development
+### Ishlab chiqishda AI'dan foydalanish
 
-To get started with building in your preferred AI powered IDE, [check out Angular prompt rules and best practices](/ai/develop-with-ai).
+Oʻzingiz yoqtirgan AI bilan jihozlangan IDE'da qurishni boshlash uchun [Angular prompt qoidalari va eng yaxshi amaliyotlari bilan tanishing](/ai/develop-with-ai).
 
-## Next steps
+## Keyingi qadamlar
 
-Now that you've created your Angular project, you can learn more about Angular in our [Essentials guide](/essentials) or choose a topic in our in-depth guides!
+Angular loyihangizni yaratganingizdan soʻng, [Asoslar qoʻllanmasida](/essentials) Angular haqida koʻproq bilib olishingiz yoki chuqur qoʻllanmalarimizdan biror mavzuni tanlashingiz mumkin!
