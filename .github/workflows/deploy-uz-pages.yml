@@ -1,0 +1,69 @@
+# Builds the Uzbek translation of angular.dev (adev) and deploys it to GitHub Pages.
+# This workflow belongs to the Ilyoskhuja/angular-uz fork only; upstream workflows are untouched.
+
+name: Deploy Uzbek docs to GitHub Pages
+
+on:
+  push:
+    branches: [uzbek-doc]
+    paths:
+      - 'adev/**'
+      - '.github/workflows/deploy-uz-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Initialize environment
+        uses: angular/dev-infra/github-actions/npm/checkout-and-setup-node@05f294094d7b9377f3b545673098aefb904962f3 # main
+      - name: Setup Bazel
+        uses: angular/dev-infra/github-actions/bazel/setup@05f294094d7b9377f3b545673098aefb904962f3 # main
+      - name: Install node modules
+        run: pnpm install --frozen-lockfile
+      - name: Build adev (production)
+        run: pnpm bazel build //adev:build.production
+      - name: Prepare site for GitHub Pages
+        env:
+          # Set repository variable ADEV_BASE_HREF to "/" once a custom domain (e.g. angular.uz) is attached.
+          # Default serves from https://<owner>.github.io/angular-uz/
+          BASE_HREF: ${{ vars.ADEV_BASE_HREF || '/angular-uz/' }}
+        run: |
+          set -euo pipefail
+          SRC=dist/bin/adev/dist/browser
+          OUT=$RUNNER_TEMP/site
+          mkdir -p "$OUT"
+          cp -RL "$SRC"/. "$OUT"/
+          chmod -R u+w "$OUT"
+          if [ "$BASE_HREF" != "/" ]; then
+            find "$OUT" -name '*.html' -exec sed -i "s|<base href=\"/\" */>|<base href=\"$BASE_HREF\" />|" {} +
+          fi
+          # SPA fallback for client-side routes on GitHub Pages
+          cp "$OUT/index.html" "$OUT/404.html"
+          touch "$OUT/.nojekyll"
+          echo "site size: $(du -sh "$OUT" | cut -f1)"
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
