@@ -4,7 +4,7 @@ Kodni qayta ishlating va ilovangiz hamda testlaringiz boʻylab xatti-harakatlarn
 
 Komponentlar oʻrtasida mantiqni ulashish kerak boʻlganda, Angular [bogʻliqliklarni inyeksiya qilish (dependency injection)](guide/di) dizayn namunasidan foydalanadi. U sizga "servis" yaratish imkonini beradi — servis kodni komponentlarga inyeksiya qilish va uni yagona haqiqat manbasidan boshqarish imkonini beradi.
 
-## Servislar nima?
+## Servislar nima? {#what-are-services}
 
 Servislar — inyeksiya qilinishi mumkin boʻlgan qayta ishlatiladigan kod boʻlaklari.
 
@@ -26,7 +26,7 @@ export class Calculator {
 }
 ```
 
-## Servisdan qanday foydalanish
+## Servisdan qanday foydalanish {#how-to-use-a-service}
 
 Komponentda servisdan foydalanmoqchi boʻlsangiz, quyidagilarni bajarishingiz kerak:
 
@@ -51,7 +51,7 @@ export class Receipt {
 
 Bu misolda `Calculator` Angular'ning [`inject`](/api/core/inject) funksiyasini chaqirish va unga servisni uzatish orqali ishlatilmoqda.
 
-## Keyingi qadam
+## Keyingi qadam {#next-step}
 
 <docs-pill-row>
   <docs-pill title="Asoslardan keyingi qadamlar" href="essentials/next-steps" />

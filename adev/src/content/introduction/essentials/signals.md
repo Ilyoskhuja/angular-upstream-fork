@@ -25,7 +25,7 @@ firstName.update((name) => name.toUpperCase());
 
 Angular signallar qayerda oʻqilishini va qachon yangilanishini kuzatib boradi. Freymvork bu maʼlumotdan DOM'ni yangi holat bilan yangilash kabi qoʻshimcha ishlarni bajarish uchun foydalanadi. Vaqt oʻtishi bilan oʻzgaruvchi signal qiymatlariga javob berish qobiliyati _reaktivlik_ deb ataladi.
 
-## Hisoblangan ifodalar (computed)
+## Hisoblangan ifodalar (computed) {#computed-expressions}
 
 `computed` — qiymatini boshqa signallar asosida hosil qiluvchi signal.
 
@@ -51,7 +51,7 @@ firstName.set('Jaime');
 console.log(firstNameCapitalized()); // JAIME
 ```
 
-## Komponentlarda signallardan foydalanish
+## Komponentlarda signallardan foydalanish {#using-signals-in-components}
 
 Holatni yaratish va boshqarish uchun komponentlaringiz ichida `signal` va `computed`'dan foydalaning:
 
@@ -72,7 +72,7 @@ export class UserProfile {
 
 TIP: Angular signallari haqida koʻproq bilmoqchimisiz? Toʻliq maʼlumot uchun [Signallar boʻyicha chuqur qoʻllanmaga](guide/signals) qarang.
 
-## Keyingi qadam
+## Keyingi qadam {#next-step}
 
 Dinamik maʼlumotlarni eʼlon qilish va boshqarishni oʻrganib oldingiz, endi bu maʼlumotlardan shablonlar ichida qanday foydalanishni oʻrganish vaqti keldi.
 

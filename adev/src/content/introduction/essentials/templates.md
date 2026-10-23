@@ -4,7 +4,7 @@ Dinamik foydalanuvchi interfeyslarini yaratish uchun Angular shablon sintaksisid
 
 Komponent shablonlari shunchaki statik HTML emas — ular komponent klassingizdagi maʼlumotlardan foydalanishi va foydalanuvchi bilan oʻzaro aloqa uchun ishlov beruvchilarni (handlers) sozlashi mumkin.
 
-## Dinamik matnni koʻrsatish
+## Dinamik matnni koʻrsatish {#showing-dynamic-text}
 
 Angular'da _bogʻlash_ (binding) komponent shabloni va uning maʼlumotlari oʻrtasida dinamik aloqa yaratadi. Bu aloqa komponent maʼlumotlaridagi oʻzgarishlar render qilingan shablonni avtomatik yangilashini taʼminlaydi.
 
@@ -38,7 +38,7 @@ Render qilingan sahifa yangi qiymatni aks ettirish uchun yangilanadi:
 <h1>Profile for cool_coder_789</h1>
 ```
 
-## Dinamik xususiyatlar va atributlarni oʻrnatish
+## Dinamik xususiyatlar va atributlarni oʻrnatish {#setting-dynamic-properties-and-attributes}
 
 Angular kvadrat qavslar yordamida dinamik qiymatlarni DOM xususiyatlariga (properties) bogʻlashni qoʻllab-quvvatlaydi:
 
@@ -62,7 +62,7 @@ Atribut nomi oldiga `attr.` prefiksini qoʻyib, HTML _atributlariga_ ham bogʻla
 
 Bogʻlangan qiymat oʻzgarganda Angular DOM xususiyatlari va atributlarini avtomatik yangilaydi.
 
-## Foydalanuvchi harakatlariga ishlov berish
+## Foydalanuvchi harakatlariga ishlov berish {#handling-user-interaction}
 
 Angular shablondagi elementga oddiy qavslar yordamida hodisa tinglovchilarini (event listeners) qoʻshish imkonini beradi:
 
@@ -98,7 +98,7 @@ export class UserProfile {
 }
 ```
 
-## `@if` va `@for` bilan boshqaruv oqimi
+## `@if` va `@for` bilan boshqaruv oqimi {#control-flow-with-if-and-for}
 
 Angular'ning `@if` bloki yordamida shablon qismlarini shartli ravishda yashirishingiz va koʻrsatishingiz mumkin:
 
@@ -141,7 +141,7 @@ Angular yuqoridagi misolda koʻrsatilgan `track` kalit soʻzidan maʼlumotlarni 
 
 TIP: Angular shablonlari haqida koʻproq bilmoqchimisiz? Toʻliq maʼlumot uchun [Shablonlar boʻyicha chuqur qoʻllanmaga](guide/templates) qarang.
 
-## Keyingi qadam
+## Keyingi qadam {#next-step}
 
 Ilovada dinamik maʼlumotlar va shablonlar bor, endi maʼlum elementlarni shartli yashirish yoki koʻrsatish, elementlar boʻylab takrorlash va boshqa usullar bilan shablonlarni yaxshilashni oʻrganish vaqti keldi.
 

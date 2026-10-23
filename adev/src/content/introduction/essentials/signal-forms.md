@@ -4,9 +4,9 @@ Signal Forms forma holatini Angular signallari yordamida boshqaradi va maʼlumot
 
 Ushbu qoʻllanma Signal Forms bilan formalar yaratishning asosiy tushunchalari boʻylab sizga yoʻl koʻrsatadi. U quyidagicha ishlaydi:
 
-## Birinchi formangizni yaratish
+## Birinchi formangizni yaratish {#creating-your-first-form}
 
-### 1. `signal()` bilan forma modelini yarating
+### 1. `signal()` bilan forma modelini yarating {#1-create-a-form-model-with-signal}
 
 Har bir forma formangizning maʼlumotlar modelini saqlaydigan signal yaratishdan boshlanadi:
 
@@ -22,7 +22,7 @@ const loginModel = signal<LoginData>({
 });
 ```
 
-### 2. `FieldTree` yaratish uchun forma modelini `form()`'ga uzating
+### 2. `FieldTree` yaratish uchun forma modelini `form()`'ga uzating {#2-pass-the-form-model-to-form-to-create-a-fieldtree}
 
 Keyin, forma modelingizni `form()` funksiyasiga uzatib **maydonlar daraxtini** (field tree) yaratasiz — bu modelingiz tuzilmasini aks ettiruvchi obyekt boʻlib, maydonlarga nuqta belgisi orqali murojaat qilish imkonini beradi.
 
@@ -35,7 +35,7 @@ loginForm; // is a FieldTree
 loginForm.email; // is also a FieldTree
 ```
 
-### 3. HTML input'larni `[formField]` direktivi bilan bogʻlang
+### 3. HTML input'larni `[formField]` direktivi bilan bogʻlang {#3-bind-html-inputs-with-formfield-directive}
 
 Keyin, HTML input'laringizni `[formField]` direktivi yordamida formaga bogʻlaysiz; bu ular oʻrtasida ikki tomonlama bogʻlash yaratadi:
 
@@ -48,7 +48,7 @@ Natijada foydalanuvchi oʻzgarishlari (masalan, maydonga matn kiritish) formani 
 
 NOTE: `[formField]` direktivi shuningdek, kerak boʻlganda `required`, `disabled` va `readonly` kabi atributlar uchun maydon holatini ham sinxronlaydi.
 
-### 4. `FieldTree` signallari bilan holatni oʻqing
+### 4. `FieldTree` signallari bilan holatni oʻqing {#4-read-state-with-fieldtree-signals}
 
 Daraxtning istalgan qismi holatiga `FieldTree` tugunini funksiya sifatida chaqirish orqali murojaat qilishingiz mumkin. Bu qiymat, validatsiya holati va oʻzaro aloqa holati uchun reaktiv signallarni oʻz ichiga olgan holat obyektini qaytaradi:
 
@@ -70,7 +70,7 @@ Joriy qiymatni oʻqish uchun `value()` signaliga murojaat qiling:
 const currentEmail = loginForm.email().value();
 ```
 
-### 5. `set()` bilan qiymatlarni yangilang
+### 5. `set()` bilan qiymatlarni yangilang {#5-update-values-with-set}
 
 Istalgan tugundagi `value.set()` metodi yordamida qiymatlarni dasturiy ravishda yangilashingiz mumkin. Bu `FieldTree`'ni ham, asosiy model signalini ham yangilaydi:
 
@@ -86,7 +86,7 @@ Natijada maydon qiymati ham, model signali ham avtomatik yangilanadi:
 console.log(loginModel().email); // 'alice@wonderland.com'
 ```
 
-### Toʻliq misol
+### Toʻliq misol {#complete-example}
 
 <docs-code-multifile preview path="adev/src/content/examples/signal-forms/src/login-simple/app/app.ts">
   <docs-code header="app.ts" path="adev/src/content/examples/signal-forms/src/login-simple/app/app.ts"/>
@@ -94,11 +94,11 @@ console.log(loginModel().email); // 'alice@wonderland.com'
   <docs-code header="app.css" path="adev/src/content/examples/signal-forms/src/login-simple/app/app.css"/>
 </docs-code-multifile>
 
-## Asosiy foydalanish
+## Asosiy foydalanish {#basic-usage}
 
 `[formField]` direktivi barcha standart HTML input turlari bilan ishlaydi. Eng keng tarqalgan namunalar:
 
-### Matnli input'lar
+### Matnli input'lar {#text-inputs}
 
 Matnli input'lar turli `type` atributlari va textarea'lar bilan ishlaydi:
 
@@ -108,7 +108,7 @@ Matnli input'lar turli `type` atributlari va textarea'lar bilan ishlaydi:
 <input type="email" [formField]="form.email" />
 ```
 
-#### Sonlar
+#### Sonlar {#numbers}
 
 Sonli input'lar satr va sonlar oʻrtasida avtomatik konvertatsiya qiladi:
 
@@ -117,7 +117,7 @@ Sonli input'lar satr va sonlar oʻrtasida avtomatik konvertatsiya qiladi:
 <input type="number" [formField]="form.age" />
 ```
 
-#### Sana va vaqt
+#### Sana va vaqt {#date-and-time}
 
 Sana input'lari qiymatlarni `YYYY-MM-DD` satrlari sifatida, vaqt input'lari esa `HH:mm` formatida saqlaydi:
 
@@ -133,7 +133,7 @@ Agar sana satrlarini Date obyektlariga aylantirish kerak boʻlsa, maydon qiymati
 const dateObject = new Date(form.eventDate().value());
 ```
 
-#### Koʻp qatorli matn
+#### Koʻp qatorli matn {#multiline-text}
 
 Textarea'lar matnli input'lar bilan bir xil ishlaydi:
 
@@ -142,7 +142,7 @@ Textarea'lar matnli input'lar bilan bir xil ishlaydi:
 <textarea [formField]="form.message" rows="4"></textarea>
 ```
 
-### Belgilash katakchalari (checkbox)
+### Belgilash katakchalari (checkbox) {#checkboxes}
 
 Belgilash katakchalari boolean qiymatlarga bogʻlanadi:
 
@@ -154,7 +154,7 @@ Belgilash katakchalari boolean qiymatlarga bogʻlanadi:
 </label>
 ```
 
-#### Bir nechta belgilash katakchalari
+#### Bir nechta belgilash katakchalari {#multiple-checkboxes}
 
 Bir nechta variant uchun har biriga alohida boolean `formField` yarating:
 
@@ -169,7 +169,7 @@ Bir nechta variant uchun har biriga alohida boolean `formField` yarating:
 </label>
 ```
 
-### Radio tugmalar
+### Radio tugmalar {#radio-buttons}
 
 Radio tugmalar belgilash katakchalariga oʻxshab ishlaydi. Radio tugmalar bir xil `[formField]` qiymatidan foydalansa, Signal Forms ularning barchasiga avtomatik ravishda bir xil `name` atributini bogʻlaydi:
 
@@ -186,7 +186,7 @@ Radio tugmalar belgilash katakchalariga oʻxshab ishlaydi. Radio tugmalar bir xi
 
 Foydalanuvchi radio tugmani tanlaganda, forma `formField`'i oʻsha radio tugmaning `value` atributidagi qiymatni saqlaydi. Masalan, "Premium" tanlansa, `form.plan().value()` qiymati `"premium"` boʻladi.
 
-### Tanlov roʻyxatlari (select)
+### Tanlov roʻyxatlari (select) {#select-dropdowns}
 
 Select elementlari statik va dinamik variantlar bilan ishlaydi:
 
@@ -209,7 +209,7 @@ Select elementlari statik va dinamik variantlar bilan ishlaydi:
 
 NOTE: Koʻp tanlovli select (`<select multiple>`) hozircha `[formField]` direktivi tomonidan qoʻllab-quvvatlanmaydi.
 
-## Validatsiya va holat
+## Validatsiya va holat {#validation-and-state}
 
 Signal Forms forma maydonlaringizga qoʻllashingiz mumkin boʻlgan oʻrnatilgan validatorlarni taqdim etadi. Validatsiya qoʻshish uchun `form()`'ga ikkinchi argument sifatida sxema funksiyasini uzating:
 
@@ -240,7 +240,7 @@ email(schemaPath.email, {message: 'Please enter a valid email address'});
 
 `FieldTree`'dagi har bir tugun oʻzining validatsiya va oʻzaro aloqa holatini reaktiv signallar orqali ochib beradi.
 
-### FieldTree holat signallari
+### FieldTree holat signallari {#fieldtree-state-signals}
 
 Daraxtdagi har bir tugun, shu jumladan ildiz forma obyekti ham, holatini kuzatish uchun bir xil signallarni taqdim etadi. Har bir tugun `FieldTree` boʻlgani uchun validlik va oʻzaro aloqani kuzatish API'si har bir darajada bir xil.
 
@@ -263,7 +263,7 @@ Daraxtdagi har bir tugun, shu jumladan ildiz forma obyekti ham, holatini kuzatis
   <docs-code header="app.css" path="adev/src/content/examples/signal-forms/src/login-validation/app/app.css"/>
 </docs-code-multifile>
 
-## Keyingi qadamlar
+## Keyingi qadamlar {#next-steps}
 
 Signal Forms va uning qanday ishlashi haqida koʻproq bilish uchun chuqur qoʻllanmalarga qarang:
 

@@ -11,7 +11,7 @@ Oʻrgangan tushunchalaringizni yanada chuqurroq oʻrganish uchun Angular'ni inte
   <docs-pill title="Angular bilan oʻynang!" href="playground" />
 </docs-pill-row>
 
-## Darsliklar
+## Darsliklar {#tutorials}
 
 Ushbu asosiy tushunchalarni brauzerdagi darsligimiz bilan amalda qoʻllang yoki Angular CLI yordamida birinchi ilovangizni lokal tarzda yarating.
 
@@ -20,7 +20,7 @@ Ushbu asosiy tushunchalarni brauzerdagi darsligimiz bilan amalda qoʻllang yoki 
   <docs-pill title="Birinchi Angular ilovangizni yarating" href="tutorials/first-app" />
 </docs-pill-row>
 
-## Chuqur qoʻllanmalar
+## Chuqur qoʻllanmalar {#in-depth-guides}
 
 Sizni qiziqtirishi mumkin boʻlgan baʼzi chuqur qoʻllanmalar:
 

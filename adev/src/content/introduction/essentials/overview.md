@@ -2,13 +2,13 @@
 Angular'ning asosiy tushunchalari bilan qisqacha tanishuv.
 </docs-decorative-header>
 
-## Angular'ga qiziqasizmi?
+## Angular'ga qiziqasizmi? {#interested-in-angular}
 
 Xush kelibsiz! Ushbu _Asoslar_ qoʻllanmasi Angular'ning baʼzi asosiy tushunchalarini tushuntiradi va freymvork bilan ishlash qanday ekanligini tushunishingizga yordam beradi. Bu qoʻllanma qisqacha kirish sifatida faqat bir nechta asosiy qurilish bloklariga eʼtibor qaratadi. Agar chuqur va toʻliq hujjatlarni izlayotgan boʻlsangiz, [hujjatlar bosh sahifasidan](overview) kerakli _Chuqur qoʻllanmalarga_ oʻtishingiz mumkin.
 
 Agar darhol kod yozishni boshlashni afzal koʻrsangiz, [toʻgʻridan-toʻgʻri amaliy darslikka oʻtishingiz](tutorials/learn-angular) mumkin.
 
-### Boshlashdan oldin
+### Boshlashdan oldin {#before-you-start}
 
 Ushbu sayt sizni HTML, CSS va TypeScript bilan tanish deb hisoblaydi. Agar veb-dasturlashga umuman yangi boʻlsangiz, bu yerga qaytishdan oldin koʻproq kirish darajasidagi materiallar bilan tanishib chiqishingiz kerak.
 
@@ -18,7 +18,7 @@ Xususan, quyidagi tushunchalar bilan tanish boʻlishingiz lozim:
 - [TypeScript asoslari](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
 - [TypeScript dekoratorlari](https://www.typescriptlang.org/docs/handbook/decorators.html)
 
-## Keyingi qadam
+## Keyingi qadam {#next-step}
 
 Boshlashga tayyormisiz? Angular'dagi komponentlar haqida bilib olish vaqti keldi!
 

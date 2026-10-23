@@ -4,7 +4,7 @@ Angular'da ilovalar yaratishning asosiy qurilish bloki.
 
 Komponentlar — Angular ilovalarining asosiy qurilish bloklari. Har bir komponent kattaroq veb-sahifaning bir qismini ifodalaydi. Ilovani komponentlarga ajratish loyihangizga tuzilma beradi va kodni vaqt oʻtishi bilan saqlash va kengaytirish oson boʻlgan aniq qismlarga ajratadi.
 
-## Komponentni aniqlash
+## Komponentni aniqlash {#defining-a-component}
 
 Har bir komponent bir nechta asosiy qismlardan iborat:
 
@@ -48,7 +48,7 @@ export class UserProfile {
 }
 ```
 
-### HTML va CSS'ni alohida fayllarga ajratish
+### HTML va CSS'ni alohida fayllarga ajratish {#separating-html-and-css-into-separate-files}
 
 `templateUrl` va `styleUrl` yordamida komponentning HTML va CSS'ini alohida fayllarda aniqlashingiz mumkin:
 
@@ -74,7 +74,7 @@ h1 {
 }
 ```
 
-## Komponentlardan foydalanish
+## Komponentlardan foydalanish {#using-components}
 
 Ilovani bir nechta komponentlarni birlashtirish orqali qurasiz. Masalan, foydalanuvchi profili sahifasini yaratayotgan boʻlsangiz, sahifani quyidagicha bir nechta komponentlarga boʻlishingiz mumkin:
 
@@ -116,7 +116,7 @@ export class UserProfile {
 
 TIP: Angular komponentlari haqida koʻproq bilmoqchimisiz? Toʻliq maʼlumot uchun [Komponentlar boʻyicha chuqur qoʻllanmaga](guide/components) qarang.
 
-## Keyingi qadam
+## Keyingi qadam {#next-step}
 
 Angular'da komponentlar qanday ishlashini bilib oldingiz, endi ilovamizga dinamik maʼlumotlarni qanday qoʻshish va boshqarishni oʻrganish vaqti keldi.
 
